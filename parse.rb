@@ -11,12 +11,6 @@ module Parse
   end
 end
 
-dict = Parse.dictionary('dictionary.txt')
-
-File.open("ruby_dictionary.rb", "w") do | f |
-  f.puts dict
-end
-
 
 # p dict['CAMEL']
 # p dict['MAMMAL']
