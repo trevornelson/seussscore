@@ -1,6 +1,8 @@
 class Work
-  def initialize
-
+  attr_accessor :lines
+  def initialize (args = {})
+    @lines = []
+    @description = args.fetch(:description, nil)
   end
 
   def seuss_score
