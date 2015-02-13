@@ -1,12 +1,13 @@
 class Word
-    def initialize args
-      @letters = [] #WORD STRING PARSED
-      @word_str = args.fetch(:word)
-      @letter_count = args.fetch(:count)
-      @rhymed = args.fetch(:rhymed, false)
-      @rhymed_words = args.fetch(:rhymed_word, [])
-      @rhymed_word_collection = []
-    end
+  def initialize args
+    #@letters = [] #WORD STRING PARSED
+    @word_str = args.fetch(:word)
+    @phonetic =
+    @letter_count = args.fetch(:count)
+    @rhymed = args.fetch(:rhymed, false)
+    @rhymed_words = args.fetch(:rhymed_word, [])
+    @rhymed_word_collection = []
+  end
 #COMPARING ALGORITHM
   def compare(word)
 

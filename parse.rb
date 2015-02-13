@@ -11,8 +11,12 @@ module Parse
   end
 end
 
-# f = File.open('abridged_dictionary.txt')
-# f.gsub(//, '')
-
 dict = Parse.dictionary('dictionary.txt')
-puts dict['GREEN']
+
+File.open("ruby_dictionary.rb", "w") do | f |
+  f.puts dict
+end
+
+
+# p dict['CAMEL']
+# p dict['MAMMAL']
