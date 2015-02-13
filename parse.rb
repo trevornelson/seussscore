@@ -1,8 +1,6 @@
 require 'csv'
-require 'pry'
-require_relative 'work.rb'
-require_relative 'line.rb'
-# require 'pry'
+require_relative 'work'
+require_relative 'line'
 
 module Parse
   def self.dictionary(file)
@@ -14,11 +12,12 @@ module Parse
   end
 
   def self.work(file)
-    @project = Work.new
+    @project = Work.new()
     CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
-      @project.work << Line.new(row)
+      line_obj = Line.new(row)
+      @project.lines << line_obj
     end
-     @project.work
+    p @project.lines
   end
 end
 
@@ -27,4 +26,4 @@ end
 
 # dict = Parse.dictionary('dictionary.txt')
 # puts dict['GREEN']
-p Parse.work('work.txt')
+ Parse.work('work.txt')

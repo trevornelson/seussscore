@@ -1,7 +1,7 @@
 class Work
-  attr_accessor :work
+  attr_accessor :lines
   def initialize (args = {})
-    @work = []
+    @lines = []
     @description = args.fetch(:description, nil)
   end
 
