@@ -4,9 +4,10 @@ class Word
       @word_str = args.fetch(:word)
       @letter_count = args.fetch(:count)
       @rhymed = args.fetch(:rhymed, false)
-      @rhymed_word = args.fetch(:rhymed_word, [])
+      @rhymed_words = args.fetch(:rhymed_word, [])
+      @rhymed_word_collection = []
     end
-#LAST WORD COMPARING ALGORITHM
+#COMPARING ALGORITHM
   def compare(word)
 
   end
@@ -14,9 +15,10 @@ class Word
   def word_str
 
   end
-##HOLDS RHYMED WORDS PUTS TO VIEW
+##HOLDS RHYMED WORDS AS PAIR PUTS TO VIEW
   def rhymed_to_s
 
+    @rhymed_word_collection << @rhymed_words
   end
 end
 
