@@ -1,5 +1,5 @@
 class Word
-    def initialize args
+    def initialize (args = {})
       @letters = [] #WORD STRING PARSED
       @word_str = args.fetch(:word)
       @letter_count = args.fetch(:count)

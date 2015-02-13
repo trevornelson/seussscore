@@ -1,9 +1,5 @@
-def Line
-  def initialize
-    @line = []
-  end
-
-  def line_population
-    @line << #we need to push in the number of lines here
+class Line
+  def initialize (args = {})
+    @description = args.fetch(:description, nil)
   end
 end
