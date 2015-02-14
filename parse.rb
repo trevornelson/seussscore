@@ -1,4 +1,5 @@
 require 'csv'
+require 'sqlite3'
 require_relative 'line'
 
 module Parse
@@ -19,6 +20,11 @@ module Parse
     end
     # p project.lines
     lines
+  end
+
+  def self.add_score(work_object)
+    File.open("score_board.csv", "a") { |f| f.puts work_object.to_csv }
+
   end
 end
 

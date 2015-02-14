@@ -11,7 +11,7 @@
 - [ ] Complete #seuss_score algorithm logic. (Kevo)
 - [X] Add rhyme boolean Word instance variable functionality. (Trevipoo)
 - [ ] Extend testing capability with test poem files, lyric files and a list of rhyming words. (Dan-the-man)
-- [ ] Remove punctuation from comparison functionality w/ regex. (Trevipoo)
+- [X] Remove punctuation from comparison functionality w/ regex. (Trevipoo)
 - [ ] Create seuss_score_board csv functionality. (Trevipoo)
 - [ ] Set up the main menu in View to prompt users to choose/input work to run through the seuss score app. (Kevo)
 - [ ] Set up the Controller to accept user input for the work they would like to analyze with seuss score. (Kevo)

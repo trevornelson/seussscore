@@ -5,7 +5,10 @@ class Work
   attr_reader :lines, :rhymed_word_collection
   def initialize(file)
     @lines = Parse.work(file)
+    @hash_value = work_hash(lines[0])
     # @description = args.fetch(:description, nil)
+    # @title =
+    # @seuss_score =
     @rhymed_word_collection = [] #for suessiness measure below
   end
 
@@ -35,5 +38,15 @@ class Work
 
   def comp_abab_scheme
 
+  end
+
+  # def to_csv
+  #   "#{@hash_value},#{title},#{@seuss_score},#{rhymed_word_collection.join(",").join(",")}"
+  # end
+
+  private
+
+  def work_hash(line_obj)
+    line_obj.description.hash
   end
 end
