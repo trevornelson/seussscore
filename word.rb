@@ -12,9 +12,17 @@ class Word
     # @rhymed_words = []
   end
 
-#COMPARING ALGORITHM
   def compare(word)
+    find_vowel == word.find_vowel
+  end
 
+  # def split
+  #   phonetic.split(" ")
+  # end
+
+  def find_vowel
+    m = /[AEIOU]/.match(phonetic)
+    m[0] + m.post_match
   end
 
 ##HOLDS RHYMED WORDS AS PAIR PUTS TO VIEW
@@ -29,3 +37,19 @@ end
 
 ### parse through word find each vowel > test letters after vowel to see fi remaining letters match
 #
+# w1 = Word.new(word: "blood")
+# w2 = Word.new(word: "blue")
+# p w1.compare(w2) == false
+# w1 = Word.new(word: "willow")
+# w2 = Word.new(word: "pillow")
+# p w1.compare(w2) == false
+# w1 = Word.new(word: "red")
+# w2 = Word.new(word: "dead")
+# p w1.compare(w2) == true
+# w1 = Word.new(word: "president")
+# w2 = Word.new(word: "residence")
+# p w1.compare(w2) == false
+# w1 = Word.new(word: "apple")
+# w2 = Word.new(word: "gradual")
+# p w1.compare(w2) == false
+
