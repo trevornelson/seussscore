@@ -1,5 +1,4 @@
 require 'csv'
-require_relative 'work'
 require_relative 'line'
 
 module Parse
@@ -12,12 +11,14 @@ module Parse
   end
 
   def self.work(file)
-    @project = Work.new()
+    # project = Work.new()
+    lines = []
     CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
-      line_obj = Line.new(row)
-      @project.lines << line_obj
+      lines << Line.new(row)
+    # project.lines << line_obj
     end
-    p @project.lines
+    # p project.lines
+    lines
   end
 end
 

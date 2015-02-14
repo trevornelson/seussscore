@@ -5,8 +5,8 @@ require_relative 'ruby_dictionary'
 
 class Word
   attr_reader :phonetic, :word_str
-  def initialize(args)
-    @word_str = args.fetch(:word, nil)
+  def initialize(word_str)
+    @word_str = word_str
     @phonetic = DICTIONARY[word_str.upcase]
     # @rhymed = args.fetch(:rhymed, false)
     # @rhymed_words = []
@@ -22,7 +22,7 @@ class Word
 
   def find_vowel
     m = /[AEIOU]/.match(phonetic)
-    m[0] + m.post_match
+    m[0] + m.post_match if m
   end
 
 ##HOLDS RHYMED WORDS AS PAIR PUTS TO VIEW
@@ -35,21 +35,5 @@ end
 # new_word = Word.new(word:'dog')
 # p new_word.phonetic
 
-### parse through word find each vowel > test letters after vowel to see fi remaining letters match
-#
-# w1 = Word.new(word: "blood")
-# w2 = Word.new(word: "blue")
-# p w1.compare(w2) == false
-# w1 = Word.new(word: "willow")
-# w2 = Word.new(word: "pillow")
-# p w1.compare(w2) == false
-# w1 = Word.new(word: "red")
-# w2 = Word.new(word: "dead")
-# p w1.compare(w2) == true
-# w1 = Word.new(word: "president")
-# w2 = Word.new(word: "residence")
-# p w1.compare(w2) == false
-# w1 = Word.new(word: "apple")
-# w2 = Word.new(word: "gradual")
-# p w1.compare(w2) == false
+### parse through word find each vowel > test letters after vowel to see fi remaining letters matc
 
