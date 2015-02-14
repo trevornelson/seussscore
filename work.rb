@@ -1,5 +1,5 @@
 require_relative 'parse'
-require 'pry'
+#require 'pry'
 
 class Work
   attr_reader :lines, :rhymed_word_collection
@@ -9,8 +9,8 @@ class Work
     @rhymed_word_collection = [] #for suessiness measure below
   end
 
-  def seuss_score
-   "%" + @rhymed_word_collection.length/ @line.length # This
+  def seuss_score #Seuss score is percentage of lines that are part of a rhyme scheme
+   "%" + @rhymed_word_collection.length/ @work.length # This
   end
 
   def comp_cuplets

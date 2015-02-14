@@ -2,7 +2,7 @@
 require_relative 'word'
 
 class Line
-  attr_reader :description, :words
+  attr_accessor :description, :words
   def initialize(args = {})
     @description = args.fetch(:description, nil)
     @words = []

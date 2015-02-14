@@ -1,6 +1,8 @@
 require 'csv'
 require_relative 'line'
 
+#require 'pry'
+
 module Parse
   def self.dictionary(file)
     dictionary_hash = {}
@@ -11,16 +13,14 @@ module Parse
   end
 
   def self.work(file)
-    # project = Work.new()
+    #project = Work.new()
     lines = []
     CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
+      #binding.pry
       lines << Line.new(row)
-    # project.lines << line_obj
+     #project.lines << line_obj
     end
-    # p project.lines
+    #p project.lines
     lines
   end
 end
-
-# Parse.work('drseuss.txt')
-

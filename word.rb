@@ -24,12 +24,6 @@ class Word
     m = /[AEIOU]/.match(phonetic)
     m[0] + m.post_match if m
   end
-
-##HOLDS RHYMED WORDS AS PAIR PUTS TO VIEW
-  def rhymed_to_s
-
-    @rhymed_word_collection << @rhymed_words
-  end
 end
 
 # new_word = Word.new(word:'dog')

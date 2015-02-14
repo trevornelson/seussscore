@@ -15,3 +15,11 @@
 Stretch
 [ ] - Write #comp_abab_scheme algorithm
 [ ] - Write #comp_inner_rhyme algorithm
+
+
+
+##############
+
+[ ] - Complete #seuss_score algorithm logic. (Kevo)
+[ ] - Set up the main menu in View to prompt users to choose/input work to run through the seuss score app. (Kevo)
+[ ] - Set up the Controller to accept user input for the work they would like to analyze with seuss score.
