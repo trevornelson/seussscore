@@ -13,14 +13,14 @@ class Word
   end
 
   def compare(word)
-    find_vowel == word.find_vowel
+    perfect_rhyme == word.perfect_rhyme
   end
 
   # def split
   #   phonetic.split(" ")
   # end
 
-  def find_vowel
+  def perfect_rhyme
     m = /[AEIOU]/.match(phonetic)
     m[0] + m.post_match if m
   end

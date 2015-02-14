@@ -10,7 +10,7 @@ class Work
   end
 
   def seuss_score
-   "%" + @rhymed_word_collection.length/ @line.length
+   "%" + @rhymed_word_collection.length/ @line.length # This
   end
 
   def comp_cuplets
