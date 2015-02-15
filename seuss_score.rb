@@ -1,6 +1,7 @@
 require_relative 'work'
 
-filename = ARGV[0]
+
+filename = "test_cases/" + ARGV[0]
 work = Work.new(filename)
 work.comp_cuplets
 
