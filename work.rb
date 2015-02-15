@@ -10,7 +10,11 @@ class Work
   end
 
   def seuss_score
-   "%" + @rhymed_word_collection.length/ @line.length # This
+   # In order to account for lines that have multiple rhyming words in them, it might be better to do the total number of rhymed words divided by the total number of words in the
+   # entire work. Rhymed_word_collection will be an array of the sets of words that rhymed in a work, so there'll be a lot of duplication in it. Each word object has a @rhymed instance
+   # variable that's either true or false, so it'll probably be the easiest to iterate through the lines, then iterate through the words in each line and count the number of word objects
+   # that have #rhymed == true.
+   "%" + @rhymed_word_collection.length/ @line.length
   end
 
   def comp_cuplets
