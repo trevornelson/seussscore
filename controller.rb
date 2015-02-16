@@ -25,7 +25,7 @@ module Controller
 
 	def self.rap_genius
 		author, title = self.work_details
-		url = "http://genius.com/#{author}-#{title.downcase.gsub(' ','-')}-lyrics"
+		url = "http://genius.com/#{author.gsub(' ','-')}-#{title.downcase.gsub(' ','-')}-lyrics"
 		work = Work.new(Scraper.fetch(url))
 		UserView.output(work)
 	end

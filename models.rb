@@ -1,7 +1,8 @@
 require_relative 'ruby_dictionary'
+require 'pry'
 
 class Work
-  attr_reader :lines, :rhymed_word_collection, :seuss_score
+  attr_reader :lines, :rhymed_word_collection, :seuss_score, :title, :author, :lines_str
   def initialize(args)
     @title = args.fetch(:title)
     @author = args.fetch(:author)
@@ -9,18 +10,26 @@ class Work
     @lines = args.fetch(:lines).map { |line| Line.new(line)}
     @rhymed_word_collection = []
     find_rhymes
-    calc_score
+    @seuss_score = calc_score
   end
 
   def calc_score
     rhymed_word_count = 0
     total_word_count = 0
     lines.each do |line|
-      total_word_count += line.words.length
-      rhymed_word_count += line.words.count { |word| word.rhymed == true }
+      line.words.each do |word|
+        if word.rhymed
+          rhymed_word_count += 1
+        end
+        total_word_count += 1
+      end
+      # total_word_count += line.words.length
+      # rhymed_word_count += line.words.count { |word| word.rhymed == true }
+      puts total_word_count
+      puts rhymed_word_count
     end
 
-    rhymed_word_count / total_word_count
+    rhymed_word_count.to_f / total_word_count.to_f
   end
 
   def find_rhymes
