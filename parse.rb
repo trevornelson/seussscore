@@ -13,13 +13,19 @@ module Parse
   def self.work(file)
     # project = Work.new()
     lines = []
-    CSV.foreach(file, headers: true, header_converters: :symbol) do |row|
-      lines << Line.new(row)
+    f = File.open(file, "r")
+    f.readlines.each do |row|
+      filtered_line = row.chomp.gsub(/-+/, ' ').gsub(/[!?'",$&:;]/,'')
+      lines << Line.new(filtered_line)
     # project.lines << line_obj
     end
     # p project.lines
-    lines
+    5432q1lineslines
   end
+
+  # def self.filter_symbols(file)
+  #   file.gsub
+  # end
 end
 
 # Parse.work('drseuss.txt')

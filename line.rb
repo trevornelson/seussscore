@@ -3,8 +3,8 @@ require_relative 'word'
 
 class Line
   attr_reader :description, :words
-  def initialize(args = {})
-    @description = args.fetch(:description, nil)
+  def initialize(line_str)
+    @description = line_str
     @words = []
     word_creator
   end
@@ -14,4 +14,8 @@ class Line
       @words << Word.new(word)
     end
   end
+
+  # def filter_symbols(line_str)
+  #   line_str.gsub(/-+/, ' ').gsub(/[!?'",$&:;]/,'')
+  # end
 end
