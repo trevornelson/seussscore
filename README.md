@@ -10,7 +10,7 @@
 - [X] Create folder to store all test-case txt files and port over test cases (Dan-the-manitee)
 - [X] Verify that #comp_cuplets method is comparing correctly after reformatting drseuss.txt (Dan-the-man)
 - [ ] Complete #seuss_score algorithm logic. (Kevo)
-- [ ] Add rhyme boolean Word instance variable functionality. (Trevipoo)
+- [X] Add rhyme boolean Word instance variable functionality. (Trevipoo)
 - [ ] Extend testing capability with test poem files, lyric files and a list of rhyming words. (Dan-the-man)
 - [ ] Remove punctuation from comparison functionality w/ regex. (Trevipoo)
 - [ ] Create seuss_score_board csv functionality. (Trevipoo)
