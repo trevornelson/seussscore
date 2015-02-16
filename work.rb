@@ -1,32 +1,40 @@
-require_relative 'parse'
-require 'pry'
+require_relative 'line'
 
 class Work
-  attr_reader :lines, :rhymed_word_collection
-  def initialize(file)
-    @lines = Parse.work(file)
-    # @description = args.fetch(:description, nil)
-    @rhymed_word_collection = [] #for suessiness measure below
+  attr_reader :lines, :rhymed_word_collection, :seuss_score
+  def initialize(args)
+    @title = args.fetch(:title)
+    @author = args.fetch(:author)
+    @lines_str = args.fetch(:lines)
+    @lines = args.fetch(:lines).map { |line| Line.new(line)}
+    @rhymed_word_collection = []
+    find_rhymes
+    calc_score
   end
 
-  def seuss_score
-   # In order to account for lines that have multiple rhyming words in them, it might be better to do the total number of rhymed words divided by the total number of words in the
-   # entire work. Rhymed_word_collection will be an array of the sets of words that rhymed in a work, so there'll be a lot of duplication in it. Each word object has a @rhymed instance
-   # variable that's either true or false, so it'll probably be the easiest to iterate through the lines, then iterate through the words in each line and count the number of word objects
-   # that have #rhymed == true.
-   "%" + @rhymed_word_collection.length/ @line.length
+  def calc_score
+    rhymed_word_count = 0
+    total_word_count = 0
+    lines.each do |line|
+      total_word_count += line.words.length
+      rhymed_word_count += line.words.count { |word| word.rhymed == true }
+    end
+
+    rhymed_word_count / total_word_count
+  end
+
+  def find_rhymes
+    comp_cuplets
   end
 
   def comp_cuplets
     line_a = lines[0]
     i = 1
     while i < lines.length do
-    # for i in (1..lines.size) do
       wrd1 = line_a.words.last
       wrd2 = lines[i].words.last
       if wrd1.compare(wrd2)
         @rhymed_word_collection << [wrd1, wrd2]
-        # binding.pry
       end
       line_a = lines[i]
       i += 1
@@ -35,5 +43,10 @@ class Work
 
   def comp_abab_scheme
 
+  end
+
+  def to_s
+    output_str = "#{title}\n#{author}\n"
+    lines.map { |line| line.description }.join("\n")
   end
 end
