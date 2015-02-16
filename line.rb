@@ -1,4 +1,3 @@
-# require_relative 'parse'
 require_relative 'word'
 
 class Line
@@ -14,8 +13,4 @@ class Line
       @words << Word.new(word)
     end
   end
-
-  # def filter_symbols(line_str)
-  #   line_str.gsub(/-+/, ' ').gsub(/[!?'",$&:;]/,'')
-  # end
 end

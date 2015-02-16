@@ -22,15 +22,8 @@ class Word
     m[0] + m.post_match if m
   end
 
-##HOLDS RHYMED WORDS AS PAIR PUTS TO VIEW
   def rhymed_to_s
 
     @rhymed_word_collection << @rhymed_words
   end
 end
-
-# new_word = Word.new(word:'dog')
-# p new_word.phonetic
-
-### parse through word find each vowel > test letters after vowel to see fi remaining letters matc
-

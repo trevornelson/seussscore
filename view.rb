@@ -1,21 +1,30 @@
-
 module UserView
   def self.print_greeting
-    puts ""
-    puts "                      ######  Welcome to SeusScore  #######      "
-    puts "                   Watch Any Dr. Seuss Poem be given a SeusScore  "
-    puts "                     --Lookout for rhyming words and phrases--    "
-    puts ""
-    puts "                              Title: #{work_title}" #NEEDS WORKS TITLE
+    puts "\n                      ######  Welcome to SeusScore  #######      "
+    puts "                   Rate any song or poem by its rhymes be given a SeusScore  "
+    puts "                     --Lookout for rhyming words and phrases--    \n\n"
     end
 
-  def self.output
-        puts ""
-        puts "#{work}: "     #NEEDS CONTENT OF WORK BEING PARSED VAR NAME
-        puts ""
-        puts "           SeusScore: #{}{seus_score} " #NEEDS CALCULATED SEUSS SCORE VAR NAME
+  def self.output(work)
+    puts "\n#{work.to_s}: \n"
+    puts "SeusScore: #{work.seuss_score}"
+  end
+
+  def self.input_type
+    puts "Please make a selection from the options below:\n"
+    puts "1 - Generate SeussScore for a poem or song from genius.com"
+    puts "2 - Generate SeussScore for a poem or song from a local file"
+  end
+
+  def self.author_prompt
+    puts "Enter the band, artist or author name:"
+  end
+
+  def self.title_prompt
+    puts "Enter the title of the song or poem:"
+  end
+
+  def self.invalid
+    puts "Invalid input, please try again."
   end
 end
-
-UserView.print_greeting
-UserView.output
